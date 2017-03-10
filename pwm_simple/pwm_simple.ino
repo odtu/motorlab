@@ -1,19 +1,34 @@
+
+ int val; 
+ int encoder0PinA = 3;
+ int encoder0PinB = 4;
+ int encoder0Pos = 0;
+ int encoder0PinALast = LOW;
+ int n = LOW;
+
 void setup()
 {
-  
+  pinMode (encoder0PinA,INPUT);
+   pinMode (encoder0PinB,INPUT);
+   Serial.begin (9600);
   pinMode(11, OUTPUT);
   TCCR2A = _BV(COM2A1)  | _BV(WGM21)|_BV(WGM21)|_BV(WGM20) ;
   
   OCR2A = 180;
- 
-}
-
- 
-
-void loop()
-{
   
 }
+ 
 
-
-
+ void loop() { 
+   n = digitalRead(encoder0PinA);
+   if ((encoder0PinALast == LOW) && (n == HIGH)) {
+     if (digitalRead(encoder0PinB) == LOW) {
+       encoder0Pos--;
+     } else {
+       encoder0Pos++;
+     }
+     Serial.print (encoder0Pos);
+     Serial.print ("/");
+   } 
+   encoder0PinALast = n;
+ } 
