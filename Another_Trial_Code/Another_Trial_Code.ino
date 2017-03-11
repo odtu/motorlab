@@ -1,6 +1,7 @@
 //defining Pins names for the code
 
-int pwm=13; int forward=12; int reverse=11;
+int pwm=11; int forward=2; int reverse=3;
+
 
 
 int encoderValue=0; void count(void); void setup()
@@ -9,11 +10,11 @@ int encoderValue=0; void count(void); void setup()
 
 Serial.begin(9600);
 
-pinMode(21,INPUT);
+pinMode(2,INPUT);
+pinMode(3,INPUT);
 
 attachInterrupt(2,count,FALLING);
 
-encoderValue=0;
 
 }
 
