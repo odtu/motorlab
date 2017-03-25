@@ -1,3 +1,14 @@
+In the first file, I see that maybe it is possible to
+generate a code without a delay. Creating classes, we
+can both run the motor  and read the encoder value
+first defining its pins in an other class:D I am excited
+already:D
+
+Very helpful document, I will try some coding now before
+reading the other one.
+
+
+
 ## **Problem and Progress Log**
 
  After the workshop, I thought using a progress log might be useful instead of
