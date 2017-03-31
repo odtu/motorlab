@@ -9,9 +9,10 @@ long ontime;
 long offtime;
 unsigned long lasttime;
 long runtime;
+long limit;
 
   public:
-  Motor(int pin,long on, long off)
+  Motor(int pin,long on, long off, long lim)
   {
     pinMotor=pin;
     lasttime=0;
@@ -19,24 +20,25 @@ long runtime;
     ontime=on;
     offtime=off;
     pinState=LOW;
-    
+    limit=lim;
     }
 
   void Update()
   { 
     unsigned long currenttime=millis();
-    
+    if(currenttime<=limit) {
     if ((pinState==HIGH)&&(currenttime-lasttime>=ontime))
     {pinState=LOW;
     lasttime=currenttime;
     digitalWrite(pinMotor,pinState);
       }
-      else if ((pinState==LOW)&&(currenttime-lasttime>=ontime))
+      else if ((pinState==LOW)&&(currenttime-lasttime>=offtime))
       {pinState=HIGH;
       lasttime=currenttime;
       digitalWrite(pinMotor,pinState);
         }
-        
+    }
+    else digitalWrite(pinMotor,LOW);
     }
     
     };
@@ -45,7 +47,7 @@ long runtime;
 
 /*Encoder encoderA(2, 100);
 Encoder encoderB(3, 100);*/
-Motor motorRun(12,4,6);
+Motor motorRun(12,10,90,3000);
 
 
 void setup(){
