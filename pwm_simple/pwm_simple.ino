@@ -1,34 +1,6 @@
 
 
-
-
-class Encoder{
-  int pin;
-  int value;
-  long runtime;
-  
-  public:
-  Encoder(int pin, long runtime ){
-    pinMode(pin,INPUT);
-    
-   
-    }
-
-  void Update()
-  {
-    unsigned long currenttime=millis();
-    int value=0;
-    if (currenttime<=runtime)
-    {
-    value += digitalRead(pin);
-   
-    Serial.println(value,DEC);
-    }
-    
-    }
-    };
-
-
+int encoder0Pos=0;
 class Motor 
 {
   int pinMotor;
@@ -71,27 +43,50 @@ long runtime;
     
 
 
-Encoder encoderA(2, 100);
-Encoder encoderB(3, 100);
+/*Encoder encoderA(2, 100);
+Encoder encoderB(3, 100);*/
 Motor motorRun(12,4,6);
 
 
 void setup(){
-  Serial.begin(9600);
-    
+Serial.begin(9600);
+ pinMode (2,INPUT_PULLUP);
+ pinMode (3,INPUT_PULLUP);
+
+attachInterrupt(0, EncoderA, RISING);
+//attachInterrupt(1, EncoderB, RISING);
     }
 
+void EncoderA()
+{
+if (digitalRead(2) == HIGH) { 
+    // check channel B to see which way encoder is turning
+    if (digitalRead(3) == LOW) {  
+      encoder0Pos = encoder0Pos + 1;         // CW
+    } 
+    else {
+      encoder0Pos = encoder0Pos - 1;         // CCW
+    }
+  }
+  else   // must be a high-to-low edge on channel A                                       
+  { 
+    // check channel B to see which way encoder is turning  
+    if (digitalRead(3) == HIGH) {   
+      encoder0Pos = encoder0Pos + 1;          // CW
+    } 
+    else {
+      encoder0Pos = encoder0Pos - 1;          // CCW
+    }
+  }
+  Serial.println (encoder0Pos, DEC);          
+  
+
+}
+
+
 void loop(){
-  encoderA.Update();
-  encoderB.Update();
-  motorRun.Update();
-  /*int pinState;
-pinMode(12, OUTPUT);
-unsigned long  Now=millis();
-  if (Now==1000)
-        {
-          pinState=LOW;
-        digitalWrite(12,pinState);
-        }*/
-      
+ motorRun.Update();
+
       }
+
+    
