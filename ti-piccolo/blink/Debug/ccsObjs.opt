@@ -1,1 +1,0 @@
-"./BlinkingLED-DevInit_F2802x.obj" "./BlinkingLED-Main.obj" "../28027_RAM_lnk.cmd" "../F28027_FLASH_BlinkingLED.CMD" "../F28027_RAM_BlinkingLED.CMD" -llibc.a 
