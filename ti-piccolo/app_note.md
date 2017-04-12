@@ -1,4 +1,6 @@
-###**For target configuration errors:**
+### For target configuration errors: 
+
+
 In CCS:
 * Unzip "xdais..." and copy it to installation directory.
 * Help > Check for updates

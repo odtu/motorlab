@@ -7,4 +7,4 @@
 - [x] pid motor control in simulation - _Mar. 2017_
 - [ ] <del> hardware implementation of pid motor control </del>
 - [ ] motor control using arduino sketch (?)
-- [ ] TI teaching rom tutorials
+- [x] TI teaching rom tutorials - _started Apr. 2017_

@@ -17,15 +17,17 @@ already :D </del>
 <del>Very helpful document, I will try some coding now before
 reading the other one. </del>
 
-H: dün Melisa encoder reading kodunu düzelttikten sonra ben de pwmi (ve motor hızını)
+H:<del> dün Melisa encoder reading kodunu düzelttikten sonra ben de pwmi (ve motor hızını)
 pot'la ayarlayabilir miyiz diye ufak bir iki değişiklik yaptım ama birkaç sorun çıktı,
 sonuç olarak hiç arduino ile daha fazla yeni maceralara atılmadan bütün o değişiklikleri
 sildim. şu an piccolo tutoriallarına göz atıyorum, pazartesi lab'da ufak tefek bir şeyler
 deneyebilmek için. bu arada teaching romu driveıma attım, madem artık çok bulunmuyormuş
-_olur da ihtiyacı olan biri görürse_ [_TI teaching rom linki._](https://drive.google.com/open?id=0B_ioIw2-WsF5djVUSjZReTg5aDQ)
+_olur da ihtiyacı olan biri görürse_ </del>[_TI teaching rom linki._](https://drive.google.com/open?id=0B_ioIw2-WsF5djVUSjZReTg5aDQ)
 
-H: f28027 kurcalamaya başladım. (klasik) led blink ile başlayayım dedim ama
+H:<del> f28027 kurcalamaya başladım. (klasik) led blink ile başlayayım dedim ama
 header fileları include etmede ve target configurationda sorun yaşıyorum, ccs
 cihaza bağlanamıyor (bilgisayarın portlarında bağlı olduğunu görebildiğim halde),
 veya kod zaten sıkıntılı olduğu için mi atamıyor anlamadım. yardıma ihtiyacım var,
-sınavlardan sonra melisa da bakmaya başlar zaten.
+sınavlardan sonra melisa da bakmaya başlar zaten.</del>
+
+H: target configuration sorununun çözümü ve gerekli dosya ti-piccolo klasörüne eklendi.
